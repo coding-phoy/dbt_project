@@ -1,7 +1,17 @@
 sources:
   - name: jaffle_shop
+    config:
+      freshness:
+        warn_after:
+          count: 10
+          period: day
+        error_after:
+          count: 100
+          period: day
+      loaded_at_field: _etl_loaded_at
     database: dbt-tutorial
     schema: jaffle_shop
+    
     tables:
       - name: customers
       - name: orders
